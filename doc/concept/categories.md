@@ -21,7 +21,7 @@ Each category section documents **tile colours** and **panel layout**. Task-row 
 |----------|------------|------------|
 | Shopping | Shopping | Documented |
 | Pantry | Pantry | Documented |
-| Chores | Chores | — |
+| Chores | Chores | Documented |
 | Personal tasks | Tasks | — |
 | Health | Health | — |
 | Hobbies | Hobbies | — |
@@ -146,35 +146,69 @@ Reference example for inventory-style category panels. **Shopping** tile covers 
 
 ### Purpose
 
-*(to be filled)*
+Track **recurring household chores** with a **type** and **repeat interval** (every 7–10 days in the sample). Each chore reschedules after completion; the panel shows how far behind the cycle is, not one-off due dates only.
 
 ### Category tile (grid)
 
 **Sample subtitle:** `2 overdue`
 
+**Prototype tile colour:** Yellow (`square-link--warn`) — sample has two chores **8–14 days** past due; none more than 14 days late.
+
 | Colour | Meaning |
 |--------|---------|
-| Green | *(to be filled)* |
-| Yellow | *(to be filled)* |
-| Red | *(to be filled)* |
+| Green | **No** open chore is more than **7 days** past its due cycle |
+| Yellow | **No** open chore is more than **14 days** late, but **at least one** is **8–14 days** late |
+| Red | **At least one** open chore is more than **14 days** past its due cycle |
+
+**Thresholds and edge cases**
+
+- **Cycle delay** = days since the chore was due (from last completion + frequency), for open (incomplete) chores.
+- **Worst delay** among open chores sets the tile colour.
+- **Empty list** → green; subtitle e.g. `No chores set`.
+- **All on schedule** (worst delay ≤ 7 days, including due today) → green; subtitle e.g. `All on schedule`.
+- **Paused** chores are excluded from delay counts (subtitle may note e.g. `1 paused`).
+- Tile colour is independent of task-row schedule colours on the list.
 
 ### Category panel (detail page)
 
-**Layout:** *(to be filled)*
+**Layout:** scrollable recurring-chore list in **three sections** (same task-row UI as [Tasks](ui-prototype/tasks.html)).
 
-**Content types shown:** *(to be filled)*
+- **Header:** title *Chores*; subtitle with counts (e.g. `7 recurring · 2 overdue`).
+- **Top actions:** header back arrow (**←**) to categories grid and **+ Add** → [add-chores-item.html](ui-prototype/add-chores-item.html).
+- **Sections (top to bottom):**
+  - **Overdue** — cycle delay &gt; 0 days; sorted by most overdue first.
+  - **Due soon** — due today or next day.
+  - **On schedule** — not yet due; sorted by next due soonest.
+- **Main row:** checkbox, title, meta line: **type** · **Every N days** · status (e.g. `10 days overdue`, `Due today`, `Due in 5 days`).
+- **Empty state:** “No chores yet — add a recurring task”.
 
-**Sections or grouping:** *(to be filled)*
+**Chore types** (select on add form; shown as row tag):
 
-**Actions / affordances:** *(to be filled)*
+| Type |
+|------|
+| Cleaning |
+| Laundry |
+| Washing dishes |
+| Taking out trash |
+| Changing bedsheets |
+| Watering plants |
+| General home maintenance |
+
+**Sample content (prototype):** seven chores with frequency **every 7–10 days** — e.g. vacuum (Cleaning, 7d, 10 days overdue), change bedsheets (12d overdue), water plants (8d, due today), take out trash (7d, tomorrow), dishwasher (7d), laundry (10d), HVAC filter (Maintenance, 10d).
+
+**Actions / affordances**
+
+- Mark done (checkbox) — resets the cycle from today + frequency.
+- **+ Add** — chore name, **type**, **frequency** (7–10 days); no priority field.
+- Back via header ←.
 
 ### Task row colours in this category
 
-Uses global schedule rules unless noted otherwise.
+Uses **global schedule rules** (due date/time for the current cycle instance). Row border does not replace tile cycle-delay rules.
 
 ### Notes
 
-*(to be filled)*
+Chores are **recurring by frequency**, not arbitrary one-off schedules. Household assignment and maintenance reminders (filters, appliances) are planned in the full app; the prototype focuses on type + interval + overdue grouping.
 
 ---
 

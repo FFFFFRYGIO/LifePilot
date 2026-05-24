@@ -271,6 +271,36 @@ body {
   min-height: 0;
 }
 
+/* Multiple sectioned lists (e.g. Chores) — one toolbar, whole block scrolls */
+.task-list-wrap--sections {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding-right: 2px;
+}
+
+.task-list-wrap--sections::-webkit-scrollbar {
+  width: 4px;
+}
+
+.task-list-wrap--sections::-webkit-scrollbar-thumb {
+  background: var(--surface-hover);
+  border-radius: 4px;
+}
+
+.task-list-wrap--sections > .task-list {
+  flex: 0 0 auto;
+  min-height: auto;
+}
+
+.task-list-wrap--sections > .section-title,
+.task-list-wrap--sections > .task-list-toolbar {
+  flex-shrink: 0;
+}
+
 .task-list-toolbar {
   flex-shrink: 0;
   display: flex;

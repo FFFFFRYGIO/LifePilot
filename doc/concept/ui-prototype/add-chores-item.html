@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifePilot — Add chore</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-add page-add-chores">
+  <div class="phone">
+    <header class="app-header app-header--back">
+      <a class="header-back" href="categories/chores.html" aria-label="Back to chores">←</a>
+      <div class="app-header__text">
+        <h1>New chore</h1>
+        <p>Recurring home task · type and frequency required</p>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <form class="form form--chores" action="categories/chores.html" method="get">
+        <label class="form-field form-field--full">
+          Chore
+          <input type="text" name="title" placeholder="What needs doing?" required />
+        </label>
+
+        <label class="form-field form-field--full">
+          Type
+          <select name="type" required>
+            <option>Cleaning</option>
+            <option>Laundry</option>
+            <option>Washing dishes</option>
+            <option>Taking out trash</option>
+            <option>Changing bedsheets</option>
+            <option>Watering plants</option>
+            <option>General home maintenance</option>
+          </select>
+        </label>
+
+        <label class="form-field form-field--full">
+          Frequency
+          <select name="frequency" required>
+            <option>Every 7 days</option>
+            <option>Every 8 days</option>
+            <option>Every 9 days</option>
+            <option>Every 10 days</option>
+          </select>
+        </label>
+
+        <label class="form-field form-field--full form-field--grow">
+          Notes
+          <textarea name="notes" placeholder="Room, assignee, supplies…"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--wide">Add chore</button>
+        <a class="form-cancel" href="categories/chores.html">Cancel</a>
+      </form>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="tasks.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Tasks
+      </a>
+      <a class="is-active" href="categories.html" aria-current="page">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Categories
+      </a>
+      <a href="calendar.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Calendar
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

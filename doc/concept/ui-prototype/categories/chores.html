@@ -6,45 +6,75 @@
   <title>LifePilot — Chores</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
-<body class="page-category">
+<body class="page-category page-category--chores">
   <div class="phone">
     <header class="app-header app-header--back">
       <a class="header-back" href="../categories.html" aria-label="Back to categories">←</a>
       <div class="app-header__text">
         <h1>Chores</h1>
-        <p>Home maintenance · 4 items</p>
+        <p>7 recurring · 2 overdue</p>
       </div>
     </header>
+
     <main class="app-main">
-      <a class="square-link square-link--accent category-add" href="../add-task.html">+ Add</a>
-      <ul class="task-list task-list--scroll">
+      <a class="square-link square-link--accent category-add" href="../add-chores-item.html">+ Add</a>
+
+      <p class="section-title">Overdue · 2</p>
+      <ul class="task-list">
         <li class="task-item task-item--alert"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Vacuum living room</div>
-            <div class="task-item__meta"><span class="task-item__tag">Overdue</span><span>Was due Saturday</span></div>
+            <div class="task-item__meta"><span class="task-item__tag">Cleaning</span><span>Every 7 days</span><span>10 days overdue</span></div>
           </div>
         </li>
+        <li class="task-item task-item--alert"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
+          <div class="task-item__body">
+            <div class="task-item__title">Change bedsheets</div>
+            <div class="task-item__meta"><span class="task-item__tag">Changing bedsheets</span><span>Every 10 days</span><span>12 days overdue</span></div>
+          </div>
+        </li>
+      </ul>
+
+      <p class="section-title">Due soon · 2</p>
+      <ul class="task-list">
         <li class="task-item task-item--warn"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Water balcony plants</div>
-            <div class="task-item__meta"><span class="task-item__due task-item__due--today">Today</span><span>Evening</span></div>
+            <div class="task-item__meta"><span class="task-item__tag">Watering plants</span><span>Every 8 days</span><span class="task-item__due task-item__due--today">Due today</span></div>
           </div>
         </li>
         <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
-            <div class="task-item__title">Take out recycling</div>
-            <div class="task-item__meta"><span>Tomorrow morning</span></div>
+            <div class="task-item__title">Take out trash</div>
+            <div class="task-item__meta"><span class="task-item__tag">Taking out trash</span><span>Every 7 days</span><span>Due tomorrow</span></div>
+          </div>
+        </li>
+      </ul>
+
+      <p class="section-title">On schedule · 3</p>
+      <ul class="task-list">
+        <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
+          <div class="task-item__body">
+            <div class="task-item__title">Run dishwasher load</div>
+            <div class="task-item__meta"><span class="task-item__tag">Washing dishes</span><span>Every 7 days</span><span>Due in 3 days</span></div>
           </div>
         </li>
         <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
-            <div class="task-item__title">Clean kitchen counters</div>
-            <div class="task-item__meta"><span>After dinner</span></div>
+            <div class="task-item__title">Laundry — colours</div>
+            <div class="task-item__meta"><span class="task-item__tag">Laundry</span><span>Every 10 days</span><span>Due in 5 days</span></div>
+          </div>
+        </li>
+        <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
+          <div class="task-item__body">
+            <div class="task-item__title">Replace HVAC filter</div>
+            <div class="task-item__meta"><span class="task-item__tag">General home maintenance</span><span>Every 10 days</span><span>Due in 8 days</span></div>
           </div>
         </li>
       </ul>
     </main>
-        <nav class="bottom-nav" aria-label="Main navigation">
+
+    <nav class="bottom-nav" aria-label="Main navigation">
       <a href="../tasks.html"><span class="bottom-nav__icon" aria-hidden="true"></span>Tasks</a>
       <a class="is-active" href="../categories.html" aria-current="page"><span class="bottom-nav__icon" aria-hidden="true"></span>Categories</a>
       <a href="../calendar.html"><span class="bottom-nav__icon" aria-hidden="true"></span>Calendar</a>

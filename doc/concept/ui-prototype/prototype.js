@@ -117,20 +117,53 @@
     );
   }
 
-  function initTaskListToolbars() {
-    document.querySelectorAll(".task-list").forEach(function (list) {
-      if (list.closest(".task-list-wrap")) return;
+  function createToolbar() {
+    var toolbar = document.createElement("div");
+    toolbar.className = "task-list-toolbar";
+    toolbar.appendChild(createToolWrap("filter", "Filter", FILTER_OPTIONS, "all"));
+    toolbar.appendChild(createToolWrap("sort", "Sort", SORT_OPTIONS, "due"));
+    return toolbar;
+  }
 
-      var toolbar = document.createElement("div");
-      toolbar.className = "task-list-toolbar";
-      toolbar.appendChild(createToolWrap("filter", "Filter", FILTER_OPTIONS, "all"));
-      toolbar.appendChild(createToolWrap("sort", "Sort", SORT_OPTIONS, "due"));
+  function wrapOneList(list, toolbar) {
+    var wrap = document.createElement("div");
+    wrap.className = "task-list-wrap";
+    list.parentNode.insertBefore(wrap, list);
+    wrap.appendChild(toolbar);
+    wrap.appendChild(list);
+  }
+
+  function initTaskListToolbars() {
+    document.querySelectorAll(".app-main").forEach(function (main) {
+      var lists = Array.prototype.filter.call(main.querySelectorAll(".task-list"), function (list) {
+        return !list.closest(".task-list-wrap");
+      });
+      if (!lists.length) return;
+
+      var toolbar = createToolbar();
+
+      if (lists.length === 1) {
+        wrapOneList(lists[0], toolbar);
+        return;
+      }
 
       var wrap = document.createElement("div");
-      wrap.className = "task-list-wrap";
-      list.parentNode.insertBefore(wrap, list);
+      wrap.className = "task-list-wrap task-list-wrap--sections";
       wrap.appendChild(toolbar);
-      wrap.appendChild(list);
+
+      var segments = [];
+      lists.forEach(function (list) {
+        var prev = list.previousElementSibling;
+        if (prev && prev.classList.contains("section-title") && prev.parentNode === main) {
+          segments.push(prev);
+        }
+        segments.push(list);
+      });
+
+      main.insertBefore(wrap, segments[0]);
+      segments.forEach(function (el) {
+        wrap.appendChild(el);
+      });
     });
 
     document.querySelectorAll(".task-list-tool").forEach(syncToolButton);
