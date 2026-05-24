@@ -18,29 +18,25 @@
     <main class="app-main">
       <a class="square-link square-link--accent category-add" href="../add-task.html">+ Add</a>
       <ul class="task-list">
-        <li class="task-item task-item--alert">
-          <input type="checkbox" aria-label="Mark done" />
+        <li class="task-item task-item--alert"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Pay electricity bill</div>
-            <div class="task-item__meta">Today 12:00 · High</div>
+            <div class="task-item__meta"><span class="task-item__due task-item__due--today">Today</span><span>12:00</span></div>
           </div>
         </li>
-        <li class="task-item task-item--alert">
-          <input type="checkbox" aria-label="Mark done" />
+        <li class="task-item task-item--alert"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Reply to landlord email</div>
             <div class="task-item__meta">Due today</div>
           </div>
         </li>
-        <li class="task-item task-item--warn">
-          <input type="checkbox" aria-label="Mark done" />
+        <li class="task-item task-item--warn"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Sort inbox (work)</div>
-            <div class="task-item__meta">30 min · Afternoon</div>
+            <div class="task-item__meta"><span>30 min</span><span>Afternoon</span></div>
           </div>
         </li>
-        <li class="task-item task-item--ok">
-          <input type="checkbox" aria-label="Mark done" />
+        <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Renew library books online</div>
             <div class="task-item__meta">This week</div>

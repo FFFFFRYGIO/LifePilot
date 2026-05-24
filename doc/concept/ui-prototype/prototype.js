@@ -30,7 +30,8 @@
       ".task-list .task-item input[type=checkbox]:not(:checked)"
     ).length;
     if (headerSubtitle) {
-      headerSubtitle.textContent = toBuy + " to buy · food, drinks, household";
+      headerSubtitle.textContent =
+        toBuy + " to buy · includes missing pantry items automatically";
     }
     if (sectionTitle) {
       sectionTitle.textContent = "To buy · " + toBuy;

@@ -69,6 +69,8 @@ Meaning **depends on the life area** — each category defines its own threshold
 
 ### Tasks (list rows)
 
+Task rows use an **MS To Do–style card**: title on the first line, category · date · details on the second (dot-separated), and a rounded-square check control that fills with a checkmark when done.
+
 Same colours on **Tasks**, **Focus today**, category task lists, and the calendar day panel. Rules are **schedule-based** (date and optional time):
 
 | Color | Meaning |

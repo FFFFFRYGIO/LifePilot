@@ -18,32 +18,28 @@
     <main class="app-main">
       <a class="square-link square-link--accent category-add" href="../add-task.html">+ Add</a>
       <ul class="task-list">
-        <li class="task-item task-item--warn task-item--done">
-          <input type="checkbox" checked aria-label="Mark done" />
+        <li class="task-item task-item--warn task-item--done"><label class="task-check"><input type="checkbox" checked aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Morning stretch</div>
             <div class="task-item__meta">Done 07:30</div>
           </div>
         </li>
-        <li class="task-item task-item--warn">
-          <input type="checkbox" aria-label="Mark done" />
+        <li class="task-item task-item--warn"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Evening run 5 km</div>
-            <div class="task-item__meta">Skipped yesterday · Plan today</div>
+            <div class="task-item__meta"><span>Skipped yesterday</span><span>Plan today</span></div>
           </div>
         </li>
-        <li class="task-item task-item--ok">
-          <input type="checkbox" aria-label="Mark done" />
+        <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Take vitamins</div>
-            <div class="task-item__meta">Daily · With breakfast</div>
+            <div class="task-item__meta"><span>Daily</span><span>With breakfast</span></div>
           </div>
         </li>
-        <li class="task-item task-item--ok">
-          <input type="checkbox" aria-label="Mark done" />
+        <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Drink 2 L water</div>
-            <div class="task-item__meta">In progress · 1.2 L</div>
+            <div class="task-item__meta"><span>In progress</span><span>1.2 L</span></div>
           </div>
         </li>
       </ul>
