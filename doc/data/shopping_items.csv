@@ -1,49 +1,49 @@
-"Category","Item"
-"Household","Toilet bowl cleaning tablets"
-"Household","Floor cleaner"
-"Household","Dish soap"
-"Household","Dust spray"
-"Household","Paper towels"
-"Household","Toilet paper"
-"Hygiene","Shaving foam"
-"Supplements","Omega 3"
-"Supplements","D3"
-"Supplements","Magnesium"
-"Convenience food","Oatmeal"
-"Convenience food","Fruit purees"
-"Convenience food","Snack bars"
-"Food","Chips"
-"Food","Rice cakes"
-"Food","Wraps"
-"Food","Cereal flakes"
-"Food","Other breakfast cereals"
-"Food","Rice"
-"Food","Groats"
-"Food","Pasta"
-"Beverages","Sparkling water"
-"Beverages","Cola Zero"
-"Beverages","Cola Zero Zero Zero"
-"Alcohol","Juices"
-"Alcohol","Beer"
-"Alcohol","Wine"
-"Alcohol","Vodka"
-"Alcohol","Whisky"
-"Food","Frozen meal"
-"Hygiene","Shower gel (home)"
-"Hygiene","Shower gel (gym)"
-"Hygiene","Gym towel"
-"Hygiene","Hand cream"
-"Convenience food","Spare food for backpack"
-"Hygiene","Listerine Total Care mouthwash"
-"Supplements","Asparaginic acid"
-"Supplements","Vitamin D3"
-"Supplements","Omega 3"
-"Hygiene","Antiperspirant"
-"Hygiene","Everyday perfume"
-"Hygiene","Going-out perfume"
-"Hygiene","Stretch mark cream"
-"Hygiene","Bio-Oil"
-"Hygiene","Shaving foam"
-"Hygiene","Razor blades"
-"Hygiene","Aftershave balm"
-"Hygiene","Good shampoo - DX2"
+"Category","Item","Required Quantity"
+"Household","Toilet bowl cleaning tablets",2
+"Household","Floor cleaner",1
+"Household","Dish soap",2
+"Household","Dust spray",1
+"Household","Paper towels",2
+"Household","Toilet paper",3
+"Hygiene","Shaving foam",2
+"Supplements","Omega 3",2
+"Supplements","D3",2
+"Supplements","Magnesium",2
+"Convenience food","Oatmeal",2
+"Convenience food","Fruit purees",2
+"Convenience food","Snack bars",2
+"Food","Chips",2
+"Food","Rice cakes",1
+"Food","Wraps",2
+"Food","Cereal flakes",2
+"Food","Other breakfast cereals",1
+"Food","Rice",2
+"Food","Groats",2
+"Food","Pasta",2
+"Beverages","Sparkling water",3
+"Beverages","Cola Zero",2
+"Beverages","Cola Zero Zero Zero",2
+"Alcohol","Juices",2
+"Alcohol","Beer",2
+"Alcohol","Wine",1
+"Alcohol","Vodka",1
+"Alcohol","Whisky",1
+"Food","Frozen meal",2
+"Hygiene","Shower gel (home)",2
+"Hygiene","Shower gel (gym)",1
+"Hygiene","Gym towel",1
+"Hygiene","Hand cream",1
+"Convenience food","Spare food for backpack",2
+"Hygiene","Listerine Total Care mouthwash",1
+"Supplements","Asparaginic acid",1
+"Supplements","Vitamin D3",2
+"Supplements","Omega 3",2
+"Hygiene","Antiperspirant",2
+"Hygiene","Everyday perfume",1
+"Hygiene","Going-out perfume",1
+"Hygiene","Stretch mark cream",1
+"Hygiene","Bio-Oil",1
+"Hygiene","Shaving foam",2
+"Hygiene","Razor blades",2
+"Hygiene","Aftershave balm",1
+"Hygiene","Good shampoo - DX2",2
