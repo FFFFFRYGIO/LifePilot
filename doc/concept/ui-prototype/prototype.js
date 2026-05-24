@@ -39,6 +39,13 @@
     return popup;
   }
 
+  function optionLabel(options, id) {
+    for (var i = 0; i < options.length; i++) {
+      if (options[i].id === id) return options[i].label;
+    }
+    return id;
+  }
+
   function createToolWrap(type, label, options, defaultId) {
     var wrap = document.createElement("div");
     wrap.className = "task-list-tool-wrap";
@@ -49,7 +56,14 @@
     btn.dataset.taskTool = type;
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-haspopup", "true");
-    btn.textContent = label;
+    btn.innerHTML =
+      '<span class="task-list-tool__label">' +
+      '<span class="task-list-tool__kind">' +
+      label +
+      "</span>" +
+      '<span class="task-list-tool__sep" aria-hidden="true">·</span>' +
+      '<span class="task-list-tool__value"></span>' +
+      "</span>";
 
     wrap.appendChild(btn);
     wrap.appendChild(createPopup(type, options, defaultId));
@@ -82,13 +96,25 @@
     }
   }
 
-  function syncAppliedState(toolBtn) {
+  function syncToolButton(toolBtn) {
+    var type = toolBtn.dataset.taskTool;
+    var options = type === "filter" ? FILTER_OPTIONS : SORT_OPTIONS;
+    var defaultId = type === "filter" ? "all" : "due";
+    var baseLabel = type === "filter" ? "Filter" : "Sort";
     var popup = toolBtn.parentElement.querySelector(".task-list-popup");
     var active = popup && popup.querySelector(".task-list-popup__option.is-active");
-    var isDefault =
-      (toolBtn.dataset.taskTool === "filter" && active && active.dataset.value === "all") ||
-      (toolBtn.dataset.taskTool === "sort" && active && active.dataset.value === "due");
+    var valueId = active ? active.dataset.value : defaultId;
+    var appliedLabel = optionLabel(options, valueId);
+    var isDefault = valueId === defaultId;
+
+    var valueEl = toolBtn.querySelector(".task-list-tool__value");
+    if (valueEl) valueEl.textContent = appliedLabel;
+
     toolBtn.classList.toggle("is-applied", !isDefault);
+    toolBtn.setAttribute(
+      "aria-label",
+      isDefault ? baseLabel : baseLabel + ": " + appliedLabel
+    );
   }
 
   function initTaskListToolbars() {
@@ -107,7 +133,7 @@
       wrap.appendChild(list);
     });
 
-    document.querySelectorAll(".task-list-tool").forEach(syncAppliedState);
+    document.querySelectorAll(".task-list-tool").forEach(syncToolButton);
   }
 
   document.addEventListener("click", function (event) {
@@ -129,7 +155,7 @@
         opt.setAttribute("aria-checked", selected ? "true" : "false");
       });
       var trigger = popup.parentElement.querySelector(".task-list-tool");
-      if (trigger) syncAppliedState(trigger);
+      if (trigger) syncToolButton(trigger);
       closePopup(popup);
       return;
     }

@@ -300,14 +300,54 @@ body {
   line-height: 1.2;
 }
 
+.task-list-tool__label {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.3em;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.task-list-tool__kind {
+  flex-shrink: 0;
+}
+
+.task-list-tool__sep,
+.task-list-tool__value {
+  display: none;
+}
+
+.task-list-tool.is-applied .task-list-tool__sep,
+.task-list-tool.is-applied .task-list-tool__value {
+  display: inline;
+}
+
+.task-list-tool.is-applied .task-list-tool__sep {
+  opacity: 0.55;
+  font-weight: 400;
+}
+
+.task-list-tool.is-applied .task-list-tool__value {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--accent);
+}
+
 .task-list-tool:hover {
   background: var(--surface-hover);
 }
 
-.task-list-tool.is-open,
-.task-list-tool.is-applied {
+.task-list-tool.is-open {
   border-color: var(--accent);
   color: var(--accent);
+  background: rgb(56 189 248 / 0.1);
+}
+
+.task-list-tool.is-applied {
+  border-color: var(--accent);
   background: rgb(56 189 248 / 0.1);
 }
 
