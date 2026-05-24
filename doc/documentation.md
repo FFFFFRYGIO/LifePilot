@@ -4,11 +4,12 @@ LifePilot docs live under `doc/`.
 
 ## Contents
 
-| Path | Description |
-|------|-------------|
+
+| Path                                 | Description                                                                          |
+| ------------------------------------ | ------------------------------------------------------------------------------------ |
 | [documentation.md](documentation.md) | Documentation index: folder layout, diagram workflow, and viewing diagrams in Cursor |
-| [concept/](concept/) | Product concept: planned features, architecture overview, and `diagrams/` (Mermaid sources and PNG exports) |
-| [data/](data/) | Sample and reference data (for example shopping lists) |
+| [concept/](concept/)                 | Product concept with preview of features, architecture and                           |
+| [data/](data/)                       | Sample and reference data (for example shopping lists)                               |
 
 
 ## Diagrams
@@ -34,3 +35,4 @@ Cursor’s rich **Preview** tab (the **Preview** pill on the Markdown tab) often
 
 - **Text Editor** for the `.md` file, then **Markdown: Open Preview** (`Ctrl+Shift+V`) on that editor tab
 - View on **GitHub** after the PNG is committed
+
