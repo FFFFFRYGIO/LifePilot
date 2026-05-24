@@ -268,3 +268,22 @@
     });
   });
 })();
+
+/** Calendar page — collapse month grid for more task list space. */
+(function () {
+  if (!document.body.classList.contains("page-calendar")) return;
+
+  var toggle = document.querySelector(".calendar-toggle");
+  var picker = document.getElementById("calendar-picker");
+  if (!toggle || !picker) return;
+
+  function setCollapsed(collapsed) {
+    document.body.classList.toggle("is-calendar-collapsed", collapsed);
+    toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    toggle.textContent = collapsed ? "Show calendar" : "Hide calendar";
+  }
+
+  toggle.addEventListener("click", function () {
+    setCollapsed(!document.body.classList.contains("is-calendar-collapsed"));
+  });
+})();

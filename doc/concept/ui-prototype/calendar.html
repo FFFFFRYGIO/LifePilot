@@ -14,6 +14,7 @@
     </header>
 
     <main class="app-main">
+      <div class="calendar-picker" id="calendar-picker">
       <div class="calendar-month">
         <button type="button" class="calendar-month__nav" aria-label="Previous month">‹</button>
         <span class="calendar-month__label">May 2026</span>
@@ -65,9 +66,13 @@
         <span class="calendar-day">30</span>
         <a class="calendar-day calendar-day--tasks" href="#day-31" title="1 task">31<span class="calendar-day__dot calendar-day__dot--ok"></span></a>
       </div>
+      </div>
 
       <div class="calendar-day-panel section-block">
-        <p class="section-title">Sunday, 24 May · 15 tasks</p>
+        <div class="calendar-day-panel__head">
+          <p class="section-title">Sunday, 24 May · 15 tasks</p>
+          <button type="button" class="calendar-toggle" aria-expanded="true" aria-controls="calendar-picker">Hide calendar</button>
+        </div>
         <ul class="task-list task-list--scroll">
           <li class="task-item task-item--alert"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
             <div class="task-item__body">

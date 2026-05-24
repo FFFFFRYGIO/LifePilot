@@ -876,6 +876,49 @@ body {
   gap: var(--gap);
 }
 
+.calendar-picker {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.page-calendar.is-calendar-collapsed .calendar-picker {
+  display: none;
+}
+
+.calendar-day-panel__head {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.calendar-day-panel__head .section-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.calendar-toggle {
+  flex-shrink: 0;
+  font: inherit;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid #475569;
+  border-radius: var(--radius);
+  padding: clamp(0.2rem, 0.8vmin, 0.4rem) clamp(0.35rem, 1vmin, 0.55rem);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.calendar-toggle:hover {
+  background: var(--surface-hover);
+}
+
 .calendar-month {
   flex-shrink: 0;
   display: flex;
