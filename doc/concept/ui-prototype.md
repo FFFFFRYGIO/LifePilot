@@ -51,7 +51,7 @@ Bottom bar on every screen (three shortcuts):
 
 ## Calendar view
 
-The **Calendar** tab (`calendar.html`) shows a month grid (weeks **Mon–Sun**, short weekday labels). Days with tasks use colored dots or a count; **today** (24 May in the sample) is highlighted, with that day’s tasks listed below the grid.
+The **Calendar** tab (`calendar.html`) shows a month grid (weeks **Mon–Sun**, short weekday labels). Days with tasks use colored dots or a count; **today** (24 May in the sample) is highlighted, with that day’s tasks listed below the grid (15 sample items, scrollable like **Focus today**).
 
 ## Categories grid
 
@@ -81,6 +81,6 @@ Same colours on **Tasks**, **Focus today**, category task lists, and the calenda
 
 ## How to view
 
-Open `doc/concept/ui-prototype/index.html` in a browser (double-click or **Simple Browser: Show** in VS Code/Cursor). Most screens fill the window without page scroll; **Tasks → Focus today** scrolls inside its section. Layout and typography scale with viewport size (`vmin` / `dvh`).
+Open `doc/concept/ui-prototype/index.html` in a browser (double-click or **Simple Browser: Show** in VS Code/Cursor). Most screens fill the window without page scroll; **Tasks → Focus today** and **Calendar → selected day** scroll inside their task lists. Layout and typography scale with viewport size (`vmin` / `dvh`).
 
 Shared styles: [ui-prototype/styles.css](ui-prototype/styles.css).
