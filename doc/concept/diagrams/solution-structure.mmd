@@ -1,0 +1,11 @@
+flowchart TB
+    DB[Database]
+    API[API]
+    WBC["Web browser (computer)"]
+    WBM["Web browser (mobile)"]
+    MA[Mobile app]
+
+    DB <--> API
+    API <--> WBC
+    API <--> WBM
+    API <--> MA
