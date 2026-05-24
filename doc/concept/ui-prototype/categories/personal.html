@@ -17,7 +17,7 @@
     </header>
     <main class="app-main">
       <a class="square-link square-link--accent category-add" href="../add-task.html">+ Add</a>
-      <ul class="task-list">
+      <ul class="task-list task-list--scroll">
         <li class="task-item task-item--alert"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Pay electricity bill</div>
@@ -27,7 +27,7 @@
         <li class="task-item task-item--alert"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Reply to landlord email</div>
-            <div class="task-item__meta">Due today</div>
+            <div class="task-item__meta"><span class="task-item__due task-item__due--today">Due today</span></div>
           </div>
         </li>
         <li class="task-item task-item--warn"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
@@ -39,7 +39,7 @@
         <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Renew library books online</div>
-            <div class="task-item__meta">This week</div>
+            <div class="task-item__meta"><span>This week</span></div>
           </div>
         </li>
       </ul>

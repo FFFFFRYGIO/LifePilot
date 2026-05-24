@@ -17,17 +17,17 @@
     </header>
     <main class="app-main">
       <a class="square-link square-link--accent category-add" href="../add-task.html">+ Add</a>
-      <ul class="task-list">
+      <ul class="task-list task-list--scroll">
         <li class="task-item task-item--warn task-item--done"><label class="task-check"><input type="checkbox" checked aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Morning stretch</div>
-            <div class="task-item__meta">Done 07:30</div>
+            <div class="task-item__meta"><span>Done</span><span>07:30</span></div>
           </div>
         </li>
         <li class="task-item task-item--warn"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
           <div class="task-item__body">
             <div class="task-item__title">Evening run 5 km</div>
-            <div class="task-item__meta"><span>Skipped yesterday</span><span>Plan today</span></div>
+            <div class="task-item__meta"><span>Skipped yesterday</span><span class="task-item__due task-item__due--today">Plan today</span></div>
           </div>
         </li>
         <li class="task-item task-item--ok"><label class="task-check"><input type="checkbox" aria-label="Mark done" /><span class="task-check__ui" aria-hidden="true"></span></label>
