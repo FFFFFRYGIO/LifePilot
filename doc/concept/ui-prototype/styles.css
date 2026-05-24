@@ -257,6 +257,118 @@ body {
   gap: var(--gap);
 }
 
+/* Task list — filter & sort toolbar */
+.task-list-wrap {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.task-list-wrap > .task-list {
+  flex: 1;
+  min-height: 0;
+}
+
+.task-list-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  gap: var(--gap);
+}
+
+.task-list-tool-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-list-tool {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font: inherit;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid #475569;
+  border-radius: var(--radius);
+  padding: clamp(0.25rem, 1vmin, 0.55rem) clamp(0.35rem, 1.2vmin, 0.65rem);
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.task-list-tool:hover {
+  background: var(--surface-hover);
+}
+
+.task-list-tool.is-open,
+.task-list-tool.is-applied {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgb(56 189 248 / 0.1);
+}
+
+.task-list-popup {
+  position: absolute;
+  top: calc(100% + 0.2rem);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: clamp(0.3rem, 1vmin, 0.55rem);
+  background: #1a2332;
+  border: 1px solid #475569;
+  border-radius: var(--radius-card);
+  box-shadow: 0 0.35rem 1rem rgb(0 0 0 / 0.45);
+}
+
+.task-list-popup__title {
+  margin: 0 0 0.35em;
+  padding: 0 0.25em;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+.task-list-popup__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: var(--font-xs);
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius);
+  padding: clamp(0.28rem, 0.95vmin, 0.5rem) 0.35rem;
+  cursor: pointer;
+  line-height: 1.25;
+}
+
+.task-list-popup__option:hover {
+  background: var(--surface-hover);
+}
+
+.task-list-popup__option.is-active {
+  color: var(--accent);
+  font-weight: 600;
+  background: rgb(56 189 248 / 0.12);
+}
+
+.page-calendar .task-list-wrap {
+  flex: 1;
+  min-height: 0;
+}
+
+.page-calendar .task-list-tool {
+  padding: clamp(0.18rem, 0.75vmin, 0.38rem) clamp(0.25rem, 0.9vmin, 0.45rem);
+}
+
 .task-list--scroll {
   flex: 1;
   min-height: 0;

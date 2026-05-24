@@ -1,3 +1,151 @@
+/** Filter & sort toolbars on every task list (prototype only). */
+(function () {
+  var FILTER_OPTIONS = [
+    { id: "all", label: "All tasks" },
+    { id: "active", label: "Active" },
+    { id: "completed", label: "Completed" },
+    { id: "overdue", label: "Overdue" },
+  ];
+  var SORT_OPTIONS = [
+    { id: "due", label: "Due date" },
+    { id: "priority", label: "Priority" },
+    { id: "name", label: "Name (A–Z)" },
+    { id: "category", label: "Category" },
+  ];
+
+  function createPopup(type, options, defaultId) {
+    var popup = document.createElement("div");
+    popup.className = "task-list-popup task-list-popup--" + type;
+    popup.hidden = true;
+    popup.setAttribute("role", "menu");
+
+    var title = document.createElement("p");
+    title.className = "task-list-popup__title";
+    title.textContent = type === "filter" ? "Filter by" : "Sort by";
+    popup.appendChild(title);
+
+    options.forEach(function (opt) {
+      var optionBtn = document.createElement("button");
+      optionBtn.type = "button";
+      optionBtn.className =
+        "task-list-popup__option" + (opt.id === defaultId ? " is-active" : "");
+      optionBtn.setAttribute("role", "menuitemradio");
+      optionBtn.setAttribute("aria-checked", opt.id === defaultId ? "true" : "false");
+      optionBtn.dataset.value = opt.id;
+      optionBtn.textContent = opt.label;
+      popup.appendChild(optionBtn);
+    });
+
+    return popup;
+  }
+
+  function createToolWrap(type, label, options, defaultId) {
+    var wrap = document.createElement("div");
+    wrap.className = "task-list-tool-wrap";
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "task-list-tool";
+    btn.dataset.taskTool = type;
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-haspopup", "true");
+    btn.textContent = label;
+
+    wrap.appendChild(btn);
+    wrap.appendChild(createPopup(type, options, defaultId));
+    return wrap;
+  }
+
+  function closePopup(popup) {
+    if (!popup || popup.hidden) return;
+    popup.hidden = true;
+    var trigger = popup.parentElement.querySelector(".task-list-tool");
+    if (trigger) {
+      trigger.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function closeAllPopups(except) {
+    document.querySelectorAll(".task-list-popup").forEach(function (popup) {
+      if (popup !== except) closePopup(popup);
+    });
+  }
+
+  function openPopup(popup) {
+    closeAllPopups(popup);
+    popup.hidden = false;
+    var trigger = popup.parentElement.querySelector(".task-list-tool");
+    if (trigger) {
+      trigger.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+    }
+  }
+
+  function syncAppliedState(toolBtn) {
+    var popup = toolBtn.parentElement.querySelector(".task-list-popup");
+    var active = popup && popup.querySelector(".task-list-popup__option.is-active");
+    var isDefault =
+      (toolBtn.dataset.taskTool === "filter" && active && active.dataset.value === "all") ||
+      (toolBtn.dataset.taskTool === "sort" && active && active.dataset.value === "due");
+    toolBtn.classList.toggle("is-applied", !isDefault);
+  }
+
+  function initTaskListToolbars() {
+    document.querySelectorAll(".task-list").forEach(function (list) {
+      if (list.closest(".task-list-wrap")) return;
+
+      var toolbar = document.createElement("div");
+      toolbar.className = "task-list-toolbar";
+      toolbar.appendChild(createToolWrap("filter", "Filter", FILTER_OPTIONS, "all"));
+      toolbar.appendChild(createToolWrap("sort", "Sort", SORT_OPTIONS, "due"));
+
+      var wrap = document.createElement("div");
+      wrap.className = "task-list-wrap";
+      list.parentNode.insertBefore(wrap, list);
+      wrap.appendChild(toolbar);
+      wrap.appendChild(list);
+    });
+
+    document.querySelectorAll(".task-list-tool").forEach(syncAppliedState);
+  }
+
+  document.addEventListener("click", function (event) {
+    var toolBtn = event.target.closest(".task-list-tool");
+    if (toolBtn) {
+      event.stopPropagation();
+      var popup = toolBtn.parentElement.querySelector(".task-list-popup");
+      if (popup.hidden) openPopup(popup);
+      else closePopup(popup);
+      return;
+    }
+
+    var optionBtn = event.target.closest(".task-list-popup__option");
+    if (optionBtn) {
+      var popup = optionBtn.closest(".task-list-popup");
+      popup.querySelectorAll(".task-list-popup__option").forEach(function (opt) {
+        var selected = opt === optionBtn;
+        opt.classList.toggle("is-active", selected);
+        opt.setAttribute("aria-checked", selected ? "true" : "false");
+      });
+      var trigger = popup.parentElement.querySelector(".task-list-tool");
+      if (trigger) syncAppliedState(trigger);
+      closePopup(popup);
+      return;
+    }
+
+    if (!event.target.closest(".task-list-popup")) {
+      closeAllPopups();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeAllPopups();
+  });
+
+  initTaskListToolbars();
+})();
+
 /** Toggle done styling on task checkboxes (prototype only). */
 (function () {
   function syncDone(item, checkbox) {
