@@ -4,7 +4,7 @@
 
 High-level map of LifePilot and its planned feature areas.
 
-![LifePilot concept diagram](./diagrams/lifepilot-concept.png)
+![[LifePilot concept diagram]](./diagrams/lifepilot-concept.png)
 
 **Smart Reminders and Automation** applies across all areas (reminders, suggestions, daily overviews).
 

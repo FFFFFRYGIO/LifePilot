@@ -4,7 +4,7 @@
 
 LifePilot uses a client–server layout: clients talk to a single **API**, and the API reads and writes the **Database**. All connections are request/response (bidirectional in the diagram below).
 
-![Solution structure diagram](./diagrams/solution-structure.png)
+![[Solution structure diagram]](./diagrams/solution-structure.png)
 
 | Component | Role |
 |-----------|------|
