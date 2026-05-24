@@ -11,6 +11,8 @@ ui-prototype/
   categories.html     # Category grid (2×4)
   calendar.html       # Month view with tasks on days
   add-task.html
+  add-shopping-item.html   # Shopping list only (no schedule)
+  add-pantry-item.html     # Pantry inventory only (no schedule)
   styles.css
   prototype.js
   categories/         # One panel per life area
@@ -33,7 +35,9 @@ ui-prototype/
 | Categories | [ui-prototype/categories.html](ui-prototype/categories.html) | 2×4 grid of life areas with status borders |
 | Category panels | [ui-prototype/categories/shopping.html](ui-prototype/categories/shopping.html), [pantry.html](ui-prototype/categories/pantry.html) (examples) | One panel per life area; see `categories/` |
 | Calendar | [ui-prototype/calendar.html](ui-prototype/calendar.html) | Month grid with task markers; selected day task list |
-| Add task | [ui-prototype/add-task.html](ui-prototype/add-task.html) | New task form |
+| Add task | [ui-prototype/add-task.html](ui-prototype/add-task.html) | New task form (category, schedule; no priority) |
+| Add shopping item | [ui-prototype/add-shopping-item.html](ui-prototype/add-shopping-item.html) | Shopping buy list only — type, quantity; no date/time |
+| Add pantry item | [ui-prototype/add-pantry-item.html](ui-prototype/add-pantry-item.html) | Pantry inventory — required & at-home qty; no date/time |
 
 ## Navigation
 
@@ -43,7 +47,7 @@ Bottom bar on every screen (three shortcuts):
 2. **Categories** — area status grid
 3. **Calendar** — month view with scheduled tasks
 
-**Add task** is reached from the **+ New task** button on Tasks and from category pages (not a fourth tab).
+**Add task** is reached from the **+ New task** button on Tasks and from most category pages (not a fourth tab). **Shopping** and **Pantry** use dedicated add forms ([add-shopping-item.html](ui-prototype/add-shopping-item.html), [add-pantry-item.html](ui-prototype/add-pantry-item.html)) with no schedule fields.
 
 ## Calendar view
 

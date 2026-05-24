@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifePilot — Calendar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-calendar">
+  <div class="phone">
+    <header class="app-header">
+      <h1>Calendar</h1>
+      <p>May 2026 · tasks on scheduled days</p>
+    </header>
+
+    <main class="app-main">
+      <div class="calendar-month">
+        <button type="button" class="calendar-month__nav" aria-label="Previous month">‹</button>
+        <span class="calendar-month__label">May 2026</span>
+        <button type="button" class="calendar-month__nav" aria-label="Next month">›</button>
+      </div>
+
+      <div class="calendar-weekdays" aria-hidden="true">
+        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+      </div>
+
+      <div class="calendar-grid" role="grid" aria-label="May 2026, week starts Monday">
+        <span class="calendar-day calendar-day--muted"></span>
+        <span class="calendar-day calendar-day--muted"></span>
+        <span class="calendar-day calendar-day--muted"></span>
+        <span class="calendar-day calendar-day--muted"></span>
+        <span class="calendar-day">1</span>
+        <span class="calendar-day">2</span>
+        <span class="calendar-day">3</span>
+
+        <span class="calendar-day">4</span>
+        <span class="calendar-day">5</span>
+        <span class="calendar-day">6</span>
+        <span class="calendar-day">7</span>
+        <span class="calendar-day">8</span>
+        <span class="calendar-day">9</span>
+        <a class="calendar-day calendar-day--tasks" href="#day-10" title="1 task">10<span class="calendar-day__dot calendar-day__dot--alert"></span></a>
+
+        <span class="calendar-day">11</span>
+        <a class="calendar-day calendar-day--tasks" href="#day-12" title="1 task">12<span class="calendar-day__dot calendar-day__dot--alert"></span></a>
+        <span class="calendar-day">13</span>
+        <span class="calendar-day">14</span>
+        <span class="calendar-day">15</span>
+        <a class="calendar-day calendar-day--tasks" href="#day-16" title="1 task">16<span class="calendar-day__dot calendar-day__dot--ok"></span></a>
+        <span class="calendar-day">17</span>
+
+        <span class="calendar-day">18</span>
+        <span class="calendar-day">19</span>
+        <a class="calendar-day calendar-day--tasks" href="#day-20" title="1 task">20<span class="calendar-day__dot calendar-day__dot--ok"></span></a>
+        <span class="calendar-day">21</span>
+        <span class="calendar-day">22</span>
+        <span class="calendar-day">23</span>
+        <a class="calendar-day calendar-day--today calendar-day--tasks is-selected" href="#day-24" id="day-24" aria-current="date">24<span class="calendar-day__count">7</span></a>
+
+        <span class="calendar-day">25</span>
+        <a class="calendar-day calendar-day--tasks" href="#day-26" title="1 task">26<span class="calendar-day__dot calendar-day__dot--warn"></span></a>
+        <span class="calendar-day">27</span>
+        <span class="calendar-day">28</span>
+        <span class="calendar-day">29</span>
+        <span class="calendar-day">30</span>
+        <a class="calendar-day calendar-day--tasks" href="#day-31" title="1 task">31<span class="calendar-day__dot calendar-day__dot--ok"></span></a>
+      </div>
+
+      <div class="calendar-day-panel">
+        <p class="section-title">Sunday, 24 May</p>
+        <ul class="task-list task-list--compact">
+          <li class="task-item task-item--alert">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Buy milk and eggs</div>
+              <div class="task-item__meta">10:00 · Shopping</div>
+            </div>
+          </li>
+          <li class="task-item task-item--alert">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Pay electricity bill</div>
+              <div class="task-item__meta">12:00 · Tasks</div>
+            </div>
+          </li>
+          <li class="task-item task-item--warn">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Vacuum living room</div>
+              <div class="task-item__meta">Afternoon · Chores</div>
+            </div>
+          </li>
+          <li class="task-item task-item--ok">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Call dentist to confirm</div>
+              <div class="task-item__meta">16:00 · Calendar</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="tasks.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Tasks
+      </a>
+      <a href="categories.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Categories
+      </a>
+      <a class="is-active" href="calendar.html" aria-current="page">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Calendar
+      </a>
+    </nav>
+  </div>
+  <script src="prototype.js"></script>
+</body>
+</html>

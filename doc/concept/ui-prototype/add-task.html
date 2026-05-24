@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifePilot — Add task</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-add">
+  <div class="phone">
+    <header class="app-header">
+      <h1>New task</h1>
+      <p>Create a task and pick a date on the calendar</p>
+    </header>
+
+    <main class="app-main">
+      <form class="form" action="tasks.html" method="get">
+        <label class="form-field form-field--full">
+          Title
+          <input type="text" name="title" placeholder="What needs to be done?" required />
+        </label>
+
+        <label class="form-field form-field--full">
+          Category
+          <select name="category">
+            <option>Shopping</option>
+            <option>Pantry</option>
+            <option>Chores</option>
+            <option>Tasks</option>
+            <option>Health</option>
+            <option>Hobbies</option>
+            <option>Goals</option>
+            <option>Automation</option>
+          </select>
+        </label>
+
+        <label class="form-field form-field--full form-field--grow">
+          Notes
+          <textarea name="notes" placeholder="Optional details…"></textarea>
+        </label>
+
+        <p class="section-title">Schedule</p>
+        <div class="grid-2 grid-2--schedule">
+          <label class="square-link schedule-option">
+            <input type="radio" name="schedule" value="today" checked />
+            Today
+          </label>
+          <label class="square-link schedule-option">
+            <input type="radio" name="schedule" value="scheduled" />
+            Pick date
+          </label>
+        </div>
+
+        <label class="form-field form-field--full">
+          Date &amp; time
+          <input type="datetime-local" name="when" />
+        </label>
+
+        <button type="submit" class="btn btn--wide">Save task</button>
+        <a class="form-cancel" href="tasks.html">Cancel</a>
+      </form>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="tasks.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Tasks
+      </a>
+      <a href="categories.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Categories
+      </a>
+      <a href="calendar.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Calendar
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

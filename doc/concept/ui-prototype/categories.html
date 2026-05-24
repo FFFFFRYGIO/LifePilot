@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifePilot — Categories</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-categories">
+  <div class="phone">
+    <header class="app-header">
+      <h1>Categories</h1>
+      <p>Status by life area · tap a block for details</p>
+    </header>
+
+    <main class="app-main">
+      <div class="legend">
+        <span><i class="ok"></i> All good</span>
+        <span><i class="warn"></i> Behind</span>
+        <span><i class="alert"></i> Needs attention</span>
+      </div>
+
+      <div class="grid-2 grid-2--fill">
+        <a class="square-link square-link--ok" href="categories/shopping.html">
+          Shopping
+          <small>7 to buy</small>
+        </a>
+        <a class="square-link square-link--warn" href="categories/pantry.html">
+          Pantry
+          <small>5 low stock</small>
+        </a>
+        <a class="square-link square-link--warn" href="categories/chores.html">
+          Chores
+          <small>2 overdue</small>
+        </a>
+        <a class="square-link square-link--alert" href="categories/personal.html">
+          Tasks
+          <small>3 open today</small>
+        </a>
+        <a class="square-link square-link--warn" href="categories/health.html">
+          Health
+          <small>Workout skipped</small>
+        </a>
+        <a class="square-link square-link--ok" href="categories/hobbies.html">
+          Hobbies
+          <small>On track</small>
+        </a>
+        <a class="square-link square-link--alert" href="categories/goals.html">
+          Goals
+          <small>Review due</small>
+        </a>
+        <a class="square-link square-link--warn" href="categories/automation.html">
+          Automation
+          <small>1 rule paused</small>
+        </a>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="tasks.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Tasks
+      </a>
+      <a class="is-active" href="categories.html" aria-current="page">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Categories
+      </a>
+      <a href="calendar.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Calendar
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

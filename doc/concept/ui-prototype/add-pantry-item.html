@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifePilot — Add pantry item</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-add page-add-pantry">
+  <div class="phone">
+    <header class="app-header app-header--back">
+      <a class="header-back" href="categories/pantry.html" aria-label="Back to pantry">←</a>
+      <div class="app-header__text">
+        <h1>New pantry item</h1>
+        <p>Track stock at home · no date or time</p>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <form class="form form--pantry" action="categories/pantry.html" method="get">
+        <label class="form-field form-field--full">
+          Item
+          <input type="text" name="title" placeholder="What do you track at home?" required />
+        </label>
+
+        <label class="form-field form-field--full">
+          Type
+          <select name="type">
+            <option>Household</option>
+            <option>Beverages</option>
+            <option>Food</option>
+            <option>Convenience food</option>
+            <option>Hygiene</option>
+            <option>Supplements</option>
+            <option>Alcohol</option>
+          </select>
+        </label>
+
+        <label class="form-field form-field--half">
+          Required
+          <input type="number" name="required" min="1" value="1" aria-label="Amount required" />
+        </label>
+
+        <label class="form-field form-field--half">
+          At home
+          <input type="number" name="home" min="0" value="0" aria-label="Amount at home" />
+        </label>
+
+        <label class="form-field form-field--full form-field--grow">
+          Notes
+          <textarea name="notes" placeholder="Where stored, pack size…"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--wide">Add to pantry</button>
+        <a class="form-cancel" href="categories/pantry.html">Cancel</a>
+      </form>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="tasks.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Tasks
+      </a>
+      <a class="is-active" href="categories.html" aria-current="page">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Categories
+      </a>
+      <a href="calendar.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Calendar
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

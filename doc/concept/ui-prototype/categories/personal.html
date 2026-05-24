@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifePilot — Tasks</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="page-category">
+  <div class="phone">
+    <header class="app-header app-header--back">
+      <a class="header-back" href="../categories.html" aria-label="Back to categories">←</a>
+      <div class="app-header__text">
+        <h1>Tasks</h1>
+        <p>Personal responsibilities · 4 items</p>
+      </div>
+    </header>
+    <main class="app-main">
+      <a class="square-link square-link--accent category-add" href="../add-task.html">+ Add</a>
+      <ul class="task-list">
+        <li class="task-item task-item--alert">
+          <input type="checkbox" aria-label="Mark done" />
+          <div class="task-item__body">
+            <div class="task-item__title">Pay electricity bill</div>
+            <div class="task-item__meta">Today 12:00 · High</div>
+          </div>
+        </li>
+        <li class="task-item task-item--alert">
+          <input type="checkbox" aria-label="Mark done" />
+          <div class="task-item__body">
+            <div class="task-item__title">Reply to landlord email</div>
+            <div class="task-item__meta">Due today</div>
+          </div>
+        </li>
+        <li class="task-item task-item--warn">
+          <input type="checkbox" aria-label="Mark done" />
+          <div class="task-item__body">
+            <div class="task-item__title">Sort inbox (work)</div>
+            <div class="task-item__meta">30 min · Afternoon</div>
+          </div>
+        </li>
+        <li class="task-item task-item--ok">
+          <input type="checkbox" aria-label="Mark done" />
+          <div class="task-item__body">
+            <div class="task-item__title">Renew library books online</div>
+            <div class="task-item__meta">This week</div>
+          </div>
+        </li>
+      </ul>
+    </main>
+        <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="../tasks.html"><span class="bottom-nav__icon" aria-hidden="true"></span>Tasks</a>
+      <a class="is-active" href="../categories.html" aria-current="page"><span class="bottom-nav__icon" aria-hidden="true"></span>Categories</a>
+      <a href="../calendar.html"><span class="bottom-nav__icon" aria-hidden="true"></span>Calendar</a>
+    </nav>
+  </div>
+  <script src="../prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifePilot — Add shopping item</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-add page-add-shopping">
+  <div class="phone">
+    <header class="app-header app-header--back">
+      <a class="header-back" href="categories/shopping.html" aria-label="Back to shopping list">←</a>
+      <div class="app-header__text">
+        <h1>New shopping item</h1>
+        <p>Add to the buy list · no date or time</p>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <form class="form form--shopping" action="categories/shopping.html" method="get">
+        <label class="form-field form-field--full">
+          Item
+          <input type="text" name="title" placeholder="What do you need to buy?" required />
+        </label>
+
+        <label class="form-field form-field--full">
+          Type
+          <select name="type">
+            <option>Household</option>
+            <option>Beverages</option>
+            <option>Food</option>
+            <option>Convenience food</option>
+            <option>Hygiene</option>
+            <option>Supplements</option>
+            <option>Alcohol</option>
+          </select>
+        </label>
+
+        <label class="form-field form-field--full">
+          Quantity needed
+          <input type="number" name="qty" min="1" value="1" />
+        </label>
+
+        <label class="form-field form-field--full form-field--grow">
+          Notes
+          <textarea name="notes" placeholder="Brand, size, store aisle…"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--wide">Add to list</button>
+        <a class="form-cancel" href="categories/shopping.html">Cancel</a>
+      </form>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="tasks.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Tasks
+      </a>
+      <a class="is-active" href="categories.html" aria-current="page">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Categories
+      </a>
+      <a href="calendar.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Calendar
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

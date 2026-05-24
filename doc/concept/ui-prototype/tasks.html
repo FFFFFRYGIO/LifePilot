@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifePilot — Tasks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-tasks">
+  <div class="phone">
+    <header class="app-header">
+      <h1>Tasks</h1>
+      <p>Sunday, 24 May · Today at a glance</p>
+    </header>
+
+    <main class="app-main">
+      <a class="square-link square-link--accent tasks-new-task" href="add-task.html">+ New task</a>
+
+      <div class="section-block">
+        <p class="section-title">Focus today</p>
+        <ul class="task-list task-list--scroll">
+          <li class="task-item task-item--alert">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Buy milk and eggs</div>
+              <div class="task-item__meta"><span class="task-item__tag">Shopping</span> Before 18:00</div>
+            </div>
+          </li>
+          <li class="task-item task-item--alert">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Pay electricity bill</div>
+              <div class="task-item__meta"><span class="task-item__tag">Tasks</span> 12:00 · High</div>
+            </div>
+          </li>
+          <li class="task-item task-item--warn">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Vacuum living room</div>
+              <div class="task-item__meta"><span class="task-item__tag">Chores</span> This afternoon</div>
+            </div>
+          </li>
+          <li class="task-item task-item--warn">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Evening run 5 km</div>
+              <div class="task-item__meta"><span class="task-item__tag">Health</span> 18:30</div>
+            </div>
+          </li>
+          <li class="task-item task-item--warn task-item--done">
+            <input type="checkbox" checked aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Morning stretch</div>
+              <div class="task-item__meta"><span class="task-item__tag">Health</span> Done 07:30</div>
+            </div>
+          </li>
+          <li class="task-item task-item--ok">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Call dentist to confirm</div>
+              <div class="task-item__meta"><span class="task-item__tag">Calendar</span> 16:00</div>
+            </div>
+          </li>
+          <li class="task-item task-item--ok">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Water balcony plants</div>
+              <div class="task-item__meta"><span class="task-item__tag">Chores</span> Evening</div>
+            </div>
+          </li>
+          <li class="task-item task-item--ok">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Read 20 pages</div>
+              <div class="task-item__meta"><span class="task-item__tag">Hobbies</span> Any time</div>
+            </div>
+          </li>
+          <li class="task-item task-item--ok">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Restock coffee beans</div>
+              <div class="task-item__meta"><span class="task-item__tag">Shopping</span> On the way home</div>
+            </div>
+          </li>
+          <li class="task-item task-item--alert">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Reply to landlord email</div>
+              <div class="task-item__meta"><span class="task-item__tag">Tasks</span> Due today</div>
+            </div>
+          </li>
+          <li class="task-item task-item--warn">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Guitar practice 15 min</div>
+              <div class="task-item__meta"><span class="task-item__tag">Hobbies</span> Before 21:00</div>
+            </div>
+          </li>
+          <li class="task-item task-item--ok">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Take vitamins</div>
+              <div class="task-item__meta"><span class="task-item__tag">Health</span> With dinner</div>
+            </div>
+          </li>
+          <li class="task-item task-item--ok">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Team stand-up</div>
+              <div class="task-item__meta"><span class="task-item__tag">Calendar</span> Tomorrow 09:00</div>
+            </div>
+          </li>
+          <li class="task-item task-item--warn">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Sort inbox (work)</div>
+              <div class="task-item__meta"><span class="task-item__tag">Tasks</span> 30 min block</div>
+            </div>
+          </li>
+          <li class="task-item task-item--ok">
+            <input type="checkbox" aria-label="Mark done" />
+            <div class="task-item__body">
+              <div class="task-item__title">Take out recycling</div>
+              <div class="task-item__meta"><span class="task-item__tag">Chores</span> Tomorrow morning</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="is-active" href="tasks.html" aria-current="page">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Tasks
+      </a>
+      <a href="categories.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Categories
+      </a>
+      <a href="calendar.html">
+        <span class="bottom-nav__icon" aria-hidden="true"></span>
+        Calendar
+      </a>
+    </nav>
+  </div>
+  <script src="prototype.js"></script>
+</body>
+</html>
