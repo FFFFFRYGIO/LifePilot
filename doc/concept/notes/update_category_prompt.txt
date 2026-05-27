@@ -1,0 +1,39 @@
+Update the LifePilot category: **{CATEGORY}**
+Apply my description to:
+1. **doc/concept/categories.md** — fill or replace the matching category section (purpose, tile colours, panel layout, notes; mark the document status table as Documented).
+2. **doc/concept/ui-prototype/categories/{slug}.html** — category detail page (header, toolbar, list/content structure, sample items).
+3. **doc/concept/ui-prototype/categories.html** — grid tile for this category: border colour class (`square-link--ok` / `--warn` / `--alert`) and subtitle `<small>` text to reflect the colour rules below.
+Reference (read only unless something is inconsistent):
+- doc/concept/planned-features.md — planned capabilities for this life area
+- doc/concept/ui-prototype/categories/shopping-pantry.html — layout reference for category pages
+- doc/concept/ui-prototype.md — global task-row colour rules (schedule-based; do not change unless I say so)
+---
+## Category panel view
+Describe how the detail page should look when the user taps this tile on the Categories grid. This drives the HTML prototype.
+- **Header:** title, subtitle, counts, badges
+- **Toolbar:** buttons and shortcuts (+ Add, back to Categories, filters, etc.)
+- **Main content:** lists, cards, tabs, sections, empty states
+- **Grouping:** sections, filters, sort order
+- **Item types:** tasks, inventory rows, events, rules, habits, etc.
+- **Sample content:** 4–8 example rows with realistic titles and meta lines
+- **Actions:** add, complete, snooze, configure — anything unique to this life area
+Panel description:
+{}
+---
+## Category tile colours (grid only)
+Define green / yellow / red for **this tile on the Categories grid** — not task-row due-date colours (those stay global).
+| Colour | When the tile shows this |
+|--------|--------------------------|
+| Green | |
+| Yellow | |
+| Red | |
+Also provide:
+- **Example subtitle** under the tile label (e.g. `2 overdue`, `Stock OK`) — used in categories.html
+- **Which colour** the prototype tile should show right now (green / yellow / red) for the sample data
+- **Thresholds** (counts, time windows, percentages) and **edge cases** (empty, all done, paused rules, etc.)
+(Paste your colour rules here)
+---
+Do not change other categories. Keep existing styles (styles.css); only edit HTML content and tile classes unless the layout truly needs new structure.
+
+Also, create new task adding form for this category. Create is as doc/concept/ui-prototype/add-{category}-item.html
+{}

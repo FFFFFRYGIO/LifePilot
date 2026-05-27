@@ -1,0 +1,121 @@
+================================================================================
+LifePilot — concept backlog (English; organized from todo_bucket)
+Polish version: todo_PL.txt
+================================================================================
+
+--------------------------------------------------------------------------------
+1. TODO — prototype, UI, and documentation
+--------------------------------------------------------------------------------
+
+TODO:
+- Extrapolate red / green / yellow category rules into a description at the top of the all-categories panel
+- Prototype for all categories:
+    - Category panel view
+    - Category-specific task creation
+- Improve the general new-task form — use chat to extrapolate all previous (per-category) forms into one
+- Split date and time inputs when entering a task
+- Filter shopping by tags — shopping / pantry, type (Household, Hygiene, etc.)
+- Shopping list in menu panel — shopping + pantry
+- Clone view of one task from MS TODO
+- Unified tasks list for all — same as Tasks → Focus today
+- Category colours — legend extrapolated from all categories (add to main documentation)
+
+--------------------------------------------------------------------------------
+2. UI prototype — notes to clarify
+--------------------------------------------------------------------------------
+
+UI prototype — notes to clarify:
+1. Medical items escalate over time: yellow after one year, red after two; postpone option available
+2. Trainings belong under health
+3. Supplements are both routine and health — handle shared tasks via a tag system
+4. Cost management panel — read amounts from bank statement?
+5. "Reminder" option — hour, day, week, [custom] before
+
+--------------------------------------------------------------------------------
+3. Development
+--------------------------------------------------------------------------------
+
+Development points:
+- No computation in the official UI — all values read directly from the database (with Redis) or returned by the API with everything needed
+- Language packs — Polish, English (JSON files)
+- Multi-layer configuration
+- Morning and evening routines can be marked failed
+- "Time since X" monitors — e.g. since last conversation with parents
+- Historical task log — persisted in the database
+- Suggestions for worthwhile tasks without a deadline
+
+- Main screen concept:
+    - Small tiles showing status only and listing tasks without a deadline
+    - Morning routine, once completed, switches at 20:00 to evening routine
+- In the afternoon — main tasks view shows the next day's tasks later
+- At noon — task rollover: tomorrow's → today's, today's → overdue
+- Trainings — can be failed; ad-hoc sessions can appear — expand training monitoring
+- Drop green as a status colour — red = bad, yellow = warning; a normal task needs no highlight colour
+
+--------------------------------------------------------------------------------
+4. Automation
+--------------------------------------------------------------------------------
+
+Automation:
+- Read films to watch from Filmweb
+- Read payments from bank account
+- Calculate calorie balance
+-
+
+--------------------------------------------------------------------------------
+5. AI features
+--------------------------------------------------------------------------------
+
+AI features:
+- Update shopping list from a receipt photo
+- Speech to tasks
+- General: AI worklog with option to change, accept, or decline each AI change
+
+--------------------------------------------------------------------------------
+6. Categories (domain areas)
+--------------------------------------------------------------------------------
+
+Categories:
+1. Shopping
+    - Wardrobe exchange project
+    - Electronic items
+    - Hobby supplies — also linked from hobbies category
+2. Pantry
+3. Cleaning chores
+3. Health
+    - Trainings — BJJ is recurring; swimming pool occasional but about every 2 weeks; roller skating occasional
+    - Appointments
+    - Routines — stretching, supplements, lubrication
+5. Appointments
+6. Tasks to track how much time has passed since … (family call, computer maintenance)
+7. Formal matters: documents, house, electricity and gas meters, car
+8. IT — drones, self-learning, work
+9. Hobbies — handpan, DJ, films and series
+    - Feature to calculate current Filmweb watchlist size
+10. Cost monitoring
+    - Term deposits (Lokaty)
+
+--------------------------------------------------------------------------------
+7. Tags concept for the system
+--------------------------------------------------------------------------------
+
+Tags concept for the system:
+- Shopping: food, drink, party, kitchen, cleaning, …, pantry
+- Cleaning chores: organized by rooms
+
+--------------------------------------------------------------------------------
+8. Task structure (data model)
+--------------------------------------------------------------------------------
+
+Task structure:
+- Body / title text
+- Tags — categories are derived from tags
+- Optional modes:
+    - Due date
+        - Date only, or date and time
+        - Reminder (1h, 1d, 1m, [custom] before)
+        - Recurrence
+    - Track time since — example (roller skating): "3 days since I went" → [click] → "0 days since I went"
+        - Without colour thresholds — always green
+        - With colour thresholds — when yellow, when red
+    - No deadline (like shopping-list products)
