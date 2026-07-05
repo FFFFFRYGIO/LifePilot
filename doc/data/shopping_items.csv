@@ -1,49 +1,98 @@
-"Category","Item","Required Quantity"
-"Household","Toilet bowl cleaning tablets",2
-"Household","Floor cleaner",1
-"Household","Dish soap",2
-"Household","Dust spray",1
-"Household","Paper towels",2
-"Household","Toilet paper",3
-"Hygiene","Shaving foam",2
-"Supplements","Omega 3",2
-"Supplements","D3",2
-"Supplements","Magnesium",2
-"Convenience food","Oatmeal",2
-"Convenience food","Fruit purees",2
-"Convenience food","Snack bars",2
-"Food","Chips",2
-"Food","Rice cakes",1
-"Food","Wraps",2
-"Food","Cereal flakes",2
-"Food","Other breakfast cereals",1
-"Food","Rice",2
-"Food","Groats",2
-"Food","Pasta",2
-"Beverages","Sparkling water",3
-"Beverages","Cola Zero",2
-"Beverages","Cola Zero Zero Zero",2
-"Alcohol","Juices",2
-"Alcohol","Beer",2
-"Alcohol","Wine",1
-"Alcohol","Vodka",1
-"Alcohol","Whisky",1
-"Food","Frozen meal",2
-"Hygiene","Shower gel (home)",2
-"Hygiene","Shower gel (gym)",1
-"Hygiene","Gym towel",1
-"Hygiene","Hand cream",1
-"Convenience food","Spare food for backpack",2
-"Hygiene","Listerine Total Care mouthwash",1
-"Supplements","Asparaginic acid",1
-"Supplements","Vitamin D3",2
-"Supplements","Omega 3",2
-"Hygiene","Antiperspirant",2
-"Hygiene","Everyday perfume",1
-"Hygiene","Going-out perfume",1
-"Hygiene","Stretch mark cream",1
-"Hygiene","Bio-Oil",1
-"Hygiene","Shaving foam",2
-"Hygiene","Razor blades",2
-"Hygiene","Aftershave balm",1
-"Hygiene","Good shampoo - DX2",2
+"CategoryId","Item","Item (PL)","Description","Description (PL)","Required Quantity"
+1,"Toilet bowl cleaning tablets","Tabletki do czyszczenia muszli WC","","",2
+1,"Floor cleaner","Płyn do podłóg","","",1
+1,"Dish soap","Płyn do naczyń","","",2
+1,"Dust spray","Spray do kurzu","","",1
+1,"Paper towels","Ręczniki papierowe","","",2
+1,"Toilet paper","Papier toaletowy","","",3
+2,"Shaving foam","Pianka do golenia","","",2
+3,"Omega 3","Omega 3","","",2
+3,"D3","D3","","",2
+3,"Magnesium","Magnez","","",2
+4,"Oatmeal","Płatki owsiane","","",2
+4,"Fruit purees","Musy owocowe","","",2
+4,"Snack bars","Batony przekąskowe","","",2
+5,"Chips","Chipsy","","",2
+5,"Rice cakes","Wafle ryżowe","","",3
+5,"Wraps","Wrapy","","",2
+5,"Breakfast cereal","Płatki do mleka","","",2
+5,"Breakfast cereal - pillows","Płatki do mleka – poduszki","","",1
+5,"Rice","Ryż","","",2
+5,"Buckwheat groats","Kasza gryczana","","",2
+5,"Couscous","Kasza kuskus","","",2
+5,"Pasta","Makaron","","",2
+5,"Whole grain pasta","Makaron pełnoziarnisty","","",2
+6,"Sparkling water","Woda gazowana","","",3
+6,"Still water","Woda niegazowana","","",3
+6,"Cola Zero","Cola Zero","","",2
+6,"Cola Zero Zero Zero","Cola Zero Zero Zero","","",2
+6,"Cola","Cola słodka","Regular, sweet","Zwykła, słodka",2
+6,"Carbonated lemonade","Gazowana lemoniada","Sprite Zero or 7 Up Zero","Sprite Zero lub 7 Up Zero",2
+7,"Juices","Soki","","",2
+7,"Beer","Piwo","","",2
+7,"Wine","Wino","","",1
+7,"Vodka","Wódka","","",1
+7,"Whisky","Whisky","","",1
+5,"Frozen meal","Danie mrożone","","",2
+5,"Frozen pizza","Pizza mrożona","","",2
+2,"Shower gel (home)","Żel pod prysznic (dom)","","",2
+2,"Shower gel (gym)","Żel pod prysznic (siłownia)","","",1
+2,"Hand cream","Krem do rąk","8-in-1","8 w jednym",1
+4,"Spare food for backpack","Zapasowe jedzenie do plecaka","","",2
+2,"Mouthwash","Płyn do płukania ust","Listerine Total Care","Listerine Total Care",1
+3,"Magnesium + potassium","Magnez + potas","Aspartate","Asparaginian",1
+3,"Vitamin D3","Witamina D3","","",2
+3,"Omega 3","Omega 3","","",2
+2,"Antiperspirant","Antyperspirant","","",2
+2,"Everyday perfume","Perfumy na co dzień","","",1
+2,"Going-out perfume","Perfumy na wyjście","","",1
+2,"Stretch mark cream","Krem na rozstępy","","",1
+2,"Bio-Oil","Bio-Oil","","",1
+2,"Shaving foam","Pianka do golenia","","",2
+2,"Razor blades","Ostrza do maszynki","","",2
+2,"Aftershave balm","Balsam po goleniu","","",1
+2,"Shampoo","Szampon","DX2 brand","Marki DX2",2
+5,"Milk 2%","Mleko 2%","","",3
+5,"Kabanos sausages","Kabanosy","","",2
+5,"Tomatoes","Pomidory","","",3
+5,"Processed cheese with ham","Serek topiony z szynką","","",2
+5,"Bread rolls","Bułki","","",3
+5,"Cheese","Ser","","",2
+5,"Ham","Szynka","","",2
+4,"Instant noodle soup","Zupka chińska","Oyakata brand","Marka Oyakata",2
+4,"Grain biscuits","Ciastka zbożowe","belVita brand","Marka belVita",1
+5,"Trail mix","Mieszanka studencka","","",2
+5,"Protein powder","Białko w proszku","","",1
+5,"Pretzel sticks","Paluszki","","",1
+5,"Cookies","Ciastka","","",1
+5,"Jelly candies","Żelki","","",1
+5,"Fruit","Owoce","e.g. apples, nectarines","np. jabłka, nektarynki",2
+5,"Ketchup","Ketchup","","",1
+5,"Garlic sauce","Sos czosnkowy","","",1
+5,"Oil","Olej","","",1
+5,"Butter","Masło","","",1
+5,"Sugar","Cukier","","",1
+5,"Salt","Sól","","",1
+5,"Pepper","Pieprz","","",1
+3,"Melatonin","Melatonina","","",1
+6,"Raspberry syrup","Syrop malinowy","For sparkling water","Do wody gazowanej",1
+6,"Tea","Herbata","","",1
+6,"Coffee","Kawa","","",1
+6,"Mint","Mięta","","",1
+6,"Orangeade","Oranżada","Hellena Zero","Hellena Zero",2
+1,"Garbage bags","Worki na śmieci","30 L","30 l",2
+1,"Bin freshener","Odświeżacz do kosza","Brise","Brise",1
+1,"Baking paper","Papier do pieczenia","","",1
+1,"Aluminium foil","Folia aluminiowa","","",1
+1,"Mop cloths","Ścierki do mopa","","",2
+1,"Dish sponges","Gąbki do mycia naczyń","","",1
+1,"Scouring pads","Druciaki do mycia naczyń","","",1
+1,"Dishwasher tablets","Kostki do zmywarki","","",1
+2,"Tissues","Chusteczki higieniczne","Small travel packs","Małe paczki kieszonkowe",2
+8,"Painkillers","Leki przeciwbólowe","","",1
+8,"Tantum Verde","Tantum Verde","Throat spray","Spray na gardło",1
+8,"Rutinoscorbin","Rutinoscorbin","","",1
+8,"Strepsils","Strepsils","","",1
+8,"Heviran","Heviran","","",1
+8,"Gripex","Gripex","Cold and flu","Na przeziębienie",1
+8,"Plasters","Plastry","","",1

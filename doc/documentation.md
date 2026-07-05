@@ -9,7 +9,7 @@ LifePilot docs live under `doc/`.
 | ------------------------------------ | ------------------------------------------------------------------------------------ |
 | [documentation.md](documentation.md) | Documentation index: folder layout, diagram workflow, and viewing diagrams in Cursor |
 | [concept/](concept/)                 | Product concept: planned features, solution structure, UI prototype and diagrams     |
-| [data/](data/)                       | Sample and reference data (for example shopping lists)                               |
+| [data/](data/)                       | Sample and reference data — shopping categories and items ([data model](data/README.md)) |
 
 
 ## Diagrams
