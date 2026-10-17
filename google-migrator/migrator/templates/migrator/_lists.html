@@ -1,0 +1,28 @@
+<div class="grid gap-4 md:grid-cols-2">
+  <div>
+    <h3 class="mb-2 font-medium text-slate-900">Microsoft To Do <span class="text-slate-400">({{ ms.items|length }})</span></h3>
+    {% if ms.error %}<p class="rounded bg-red-50 px-3 py-2 text-red-800">{{ ms.error }}</p>{% endif %}
+    <ul class="divide-y divide-slate-100 rounded border border-slate-200">
+      {% for l in ms.items %}
+      <li class="flex items-center justify-between px-3 py-1.5 text-slate-800">
+        <span>{{ l.displayName }}</span>
+        <span class="text-xs text-slate-400">{% if l.wellknownListName and l.wellknownListName != "none" %}{{ l.wellknownListName }}{% endif %}{% if l.isShared %} · udostępniona{% endif %}</span>
+      </li>
+      {% empty %}{% if not ms.error %}<li class="px-3 py-1.5">Brak list.</li>{% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h3 class="mb-2 font-medium text-slate-900">Google Tasks <span class="text-slate-400">({{ google.items|length }})</span></h3>
+    {% if google.error %}<p class="rounded bg-red-50 px-3 py-2 text-red-800">{{ google.error }}</p>{% endif %}
+    <ul class="divide-y divide-slate-100 rounded border border-slate-200">
+      {% for l in google.items %}
+      <li class="flex items-center justify-between px-3 py-1.5 text-slate-800">
+        <span>{{ l.title }}</span>
+        <span class="text-xs text-slate-400">zmieniona {{ l.updated|slice:":10" }}</span>
+      </li>
+      {% empty %}{% if not google.error %}<li class="px-3 py-1.5">Brak list.</li>{% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

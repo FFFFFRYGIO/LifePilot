@@ -1,0 +1,64 @@
+[project]
+name = "mstodo-migrator"
+version = "0.1.0"
+description = "One-shot, supervised migration from Microsoft To Do to Google Tasks"
+requires-python = ">=3.13"
+dependencies = [
+    "certifi>=2026.7.22",
+    "cryptography>=50.0.1",
+    "django>=5.2,<5.3",
+    "django-environ>=0.14.0",
+    "django-tailwind-cli>=4.8.1",
+    "gunicorn>=26.2.0",
+    "httpx>=0.28.1",
+    "psycopg[binary]>=3.3.6",
+    "whitenoise>=6.12.0",
+]
+
+[dependency-groups]
+dev = [
+    "django-stubs>=5.2,<5.3",
+    "mypy>=2.3.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "pytest-django>=4.14.0",
+    "respx>=0.23.1",
+    "ruff>=0.16.8",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py313"
+extend-exclude = ["migrator/migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "DJ", "S", "SIM", "RUF", "PT"]
+ignore = ["RUF001", "RUF002", "RUF003"]  # Polish text and typographic quotes are intentional
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106"]
+"config/test_settings.py" = ["S105"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+plugins = ["mypy_django_plugin.main"]
+exclude = ["migrations/"]
+
+[[tool.mypy.overrides]]
+module = ["environ.*", "respx.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[tool.django-stubs]
+django_settings_module = "config.test_settings"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.test_settings"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --cov=migrator --cov-report=term-missing:skip-covered"

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Logowanie{% endblock %}
+{% block content %}
+<form method="post" class="mx-auto mt-12 max-w-sm space-y-4 rounded-lg border border-slate-200 bg-white p-6">
+  {% csrf_token %}
+  <h1 class="text-lg font-semibold">Zaloguj się</h1>
+  {% if form.errors %}<p class="text-sm text-red-700">Nieprawidłowy login lub hasło.</p>{% endif %}
+  <label class="block text-sm">Login
+    <input name="username" autofocus required class="mt-1 w-full rounded border border-slate-300 px-2 py-1.5">
+  </label>
+  <label class="block text-sm">Hasło
+    <input type="password" name="password" required class="mt-1 w-full rounded border border-slate-300 px-2 py-1.5">
+  </label>
+  <input type="hidden" name="next" value="{{ next }}">
+  <button class="w-full rounded bg-slate-900 px-3 py-2 text-sm font-medium text-white hover:bg-slate-700">Zaloguj</button>
+</form>
+{% endblock %}
