@@ -16,6 +16,35 @@ account) into Google Tasks. Microsoft To Do is only ever read, never modified.
 | 4 | Exceptions queue | – |
 | 5 | Wrap-up: verification report, marker cleanup | – |
 | 6 | History, audit, remaining tests | – |
+| + | Birthdays: yearly occasions to Google Calendar + Tasks (`migrate_birthdays`) | done |
+
+## Birthdays and yearly occasions
+
+`migrate_birthdays` moves one To Do list of yearly occasions (birthdays, name days, Mother's Day …)
+into Google. Each source task becomes **two** things:
+
+- a repeating **all-day calendar event** (`RRULE:FREQ=YEARLY`, shown as free, not busy) in a
+  dedicated calendar, optionally shared with other accounts;
+- a **Google task** for the next occurrence, titled "… — złożyć życzenia, rozważyć prezent", so the
+  date is not just marked but actionable.
+
+```sh
+make dev                                        # or: docker compose --profile app up
+uv run python manage.py migrate_birthdays --dry-run
+uv run python manage.py migrate_birthdays
+```
+
+Options: `--source-list`, `--calendar`, `--share-with a@b.com c@d.com`, `--no-tasks`. Defaults come
+from `BIRTHDAY_*` in `.env` (see `.env.example`). The calendar and the Google task list are created
+only if missing, and sharing is re-applied idempotently.
+
+**Google Tasks has no recurrence in the API.** The calendar event repeats forever; the task covers
+the upcoming occurrence only. Re-running the command after a year creates the next task — the
+calendar side needs nothing.
+
+`BirthdayMapping` keeps one row per source task, so nothing is transferred twice. If a run dies
+between the Google call and the commit, the next run finds its own `⟦mstodo:…⟧` marker in the event
+description and adopts it instead of creating a duplicate.
 
 ## Verified API behaviour
 

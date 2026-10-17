@@ -37,6 +37,13 @@ MS_AUTHORITY = env("MS_AUTHORITY", default="https://login.microsoftonline.com/co
 GOOGLE_CLIENT_ID = env("GOOGLE_CLIENT_ID", default="")
 GOOGLE_CLIENT_SECRET = env("GOOGLE_CLIENT_SECRET", default="")
 
+# --- birthdays feature ------------------------------------------------------
+# Yearly occasions move from one To Do list into one Google calendar plus a matching task list.
+BIRTHDAY_SOURCE_LIST = env("BIRTHDAY_SOURCE_LIST", default="Urodziny")
+BIRTHDAY_CALENDAR_NAME = env("BIRTHDAY_CALENDAR_NAME", default="Urodziny")
+BIRTHDAY_SHARE_WITH = env.list("BIRTHDAY_SHARE_WITH", default=[])
+BIRTHDAY_SHARE_ROLE = env("BIRTHDAY_SHARE_ROLE", default="writer")
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",

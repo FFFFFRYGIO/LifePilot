@@ -42,3 +42,16 @@ class GraphClient(ApiClient):
 
     def list_task_lists(self) -> list[dict[str, Any]]:
         return list(self.paginate("/me/todo/lists"))
+
+    def find_task_list_by_name(self, display_name: str) -> dict[str, Any] | None:
+        for task_list in self.list_task_lists():
+            if task_list.get("displayName") == display_name:
+                return task_list
+        return None
+
+    def list_tasks(self, task_list_id: str, *, include_completed: bool = False) -> list[dict[str, Any]]:
+        """Open tasks of a list. Completed ones are skipped by default: the migration is forward-looking."""
+        params: dict[str, Any] = {"$top": 100}
+        if not include_completed:
+            params["$filter"] = "status ne 'completed'"
+        return list(self.paginate(f"/me/todo/lists/{task_list_id}/tasks", params))

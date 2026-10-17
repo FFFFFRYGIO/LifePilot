@@ -23,7 +23,12 @@ REFRESH_MARGIN = timedelta(minutes=5)
 
 # Read-only on the Microsoft side by design: the migrator never modifies Microsoft To Do.
 MS_SCOPES = ("offline_access", "User.Read", "Tasks.Read")
-GOOGLE_SCOPES = ("openid", "email", "https://www.googleapis.com/auth/tasks")
+GOOGLE_SCOPES = (
+    "openid",
+    "email",
+    "https://www.googleapis.com/auth/tasks",
+    "https://www.googleapis.com/auth/calendar",
+)
 
 
 class OAuthError(Exception):
